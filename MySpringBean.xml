@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- added context name in xmlns to enable the annotation based configuration -->
+	
+	<!-- below is bean creation for autowire byName -->
+	<!-- <bean id="loginController"
+		class="com.project1.controller.LoginController" autowire = "byName">
+		<property name ="place" value ="Bangalore" ></property>
+		<property name="fullName" ref ="name"></property>
+	</bean> -->
+	
+	<!-- below is bean creation by autowire byType -->	
+	<!-- <bean id="loginController"
+		class="com.project1.controller.LoginController" autowire = "byType">
+		<property name ="place" value ="Bangalore" ></property>
+		<property name="fullName" ref ="name"></property>
+	</bean> -->
+	
+	
+	
+	
+	<bean id="fullName" class="com.project1.controller.Name">
+		<property name="firstName" value="Sumit"></property>
+		<property name="lastName" value="Kumar"></property>
+	</bean>
+	
+	<!-- below is the bean creation using constructor argument -->
+	<bean id="loginController"
+		class="com.project1.controller.LoginController" autowire="constructor">
+		<constructor-arg value="Bangalore"></constructor-arg>
+	</bean>
+	
+</beans>
